@@ -9,6 +9,7 @@ from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, D
 from rest_framework.views import APIView
 
 
+
 class PhoneList(APIView):
     permission_classes = [permissions.IsAuthenticated, ]
     def get(self, request):
@@ -20,6 +21,7 @@ class PhoneList(APIView):
             'message' : 'Phone List bu, oka'
         }
         return Response(response)
+
 
 
 
@@ -41,6 +43,7 @@ class PhoneCreate(APIView):
                 'message' : 'Telefon ysrstilmsdi'
             }
             return Response(response)
+
 
 
 
@@ -85,6 +88,8 @@ class PhoneUpdate(APIView):
 
 
 
+
+
 class PhoneDetail(APIView):
     def get(self, request, pk):
         try:
@@ -103,6 +108,8 @@ class PhoneDetail(APIView):
             }
         finally:
             return Response(response)
+
+
 
 
 
@@ -125,6 +132,10 @@ class PhoneDelete(APIView):
 
         finally:
             return Response(response)
+
+
+
+
 
 # class PhoneList(ListAPIView):
 #     permission_classes = permissions.IsAuthenticated
